@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+/* Common Styling  Start */
+
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +24,7 @@ li {
 
 .container {
   width: 90%;
-  border: 1px solid;
+  /* border: 1px solid; */
   margin: auto;
 }
 
@@ -41,26 +43,32 @@ li {
 .bg-white {
   background-color: white;
 }
+.gray-border {
+  border: 1px solid #ddd;
+}
+
+/* Common Styling  End */
+
+/* Header Styling  Start */
 
 header .container {
   margin: 15px auto 30px auto;
   min-height: 400px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  display: flex;
   overflow: hidden;
-  /* background-color: #161616; */
-  /* color: white; */
-  border-radius: 15px;
+  background-color: #161616;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
 }
 
 header .container > * {
-  /* height: 100%; */
-  border: 1px solid;
-  padding: 30px;
+  width: 50%;
+  padding: 0 50px;
 }
 
 header .container .text {
-  /* width: 60%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,33 +79,30 @@ header .container .text div > * {
 }
 
 header .container .image {
-  /* width: 40%; */
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header .container .image img {
-  object-position: center;
   position: absolute;
-  left: -30px;
   bottom: 0;
 }
+
+/* Header Styling End  */
+
+/* Navigation & Blog Styling Start  */
 
 .nav-blogs {
   margin: 70px 0;
 }
 
 .nav-blogs .container {
-  /* min-height: 300px; */
-  /* border: 1px solid; */
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
-
 .nav-blogs .container .nav {
   width: 25%;
-  /* border: 1px solid; */
-  /* min-height: 400px; */
 }
 
 .nav {
@@ -105,12 +110,14 @@ header .container .image img {
 }
 
 nav {
+  width: 230px;
   background-color: #161616;
   display: flex;
   flex-direction: column;
-  padding: 15px 15px 0 15px;
+  padding: 10px 10px 0 10px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin: auto;
 }
 
 nav > * {
@@ -119,8 +126,6 @@ nav > * {
 
 .nav-blogs .container .blogs {
   width: 75%;
-  /* border: 1px solid; */
-  /* min-height: 400px; */
 }
 
 .nav-blogs .container .blogs {
@@ -130,8 +135,6 @@ nav > * {
 }
 
 .nav-blogs .container .blogs article {
-  /* background-color: deepskyblue; */
-  /* padding: 0 12px; */
   border: 1px solid #ddd;
   border-radius: 10px;
 }
@@ -151,7 +154,7 @@ nav > * {
 }
 
 .nav-blogs .container .blogs article .btn {
-  border: 1px solid #161616;
+  border: 1px solid #dbdbdb;
   padding: 2px 5px;
   margin-top: -15px;
 }
@@ -168,6 +171,10 @@ nav > * {
   justify-content: center;
   align-items: center;
 }
+
+/* Navigation & Blog Styling End */
+
+/* footer Styling Start  */
 
 footer {
   text-align: center;
@@ -194,6 +201,8 @@ footer i {
   margin-right: 10px;
 }
 
+/* footer Styling End  */
+
 @media screen and (max-width: 688px) {
   header .container {
     display: block;
@@ -204,11 +213,12 @@ footer i {
   }
 }
 
-/* Match Website  */
+/* Match Website  Start*/
+
+/* Upcoming Matches Styling Start  */
 
 .matches {
   width: 75%;
-  /* border: 1px solid; */
   min-height: 100px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -217,18 +227,16 @@ footer i {
 }
 
 .match {
-  /* background-color: deepskyblue; */
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #ddd;
 }
 
 .match .flag {
-  /* background-color: deepskyblue; */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 1vw;
   margin: 15px;
 }
 
@@ -237,61 +245,103 @@ footer i {
   margin-bottom: 25px;
 }
 
+/* Upcoming Matches Styling End   */
+
 /* Media Queries  */
 
-/* Mobile Device  */
+/* Mobile Device Start  */
 
 @media only screen and (max-width: 688px) {
-  header .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    /* height: 800px; */
+  header .container > * {
+    padding: 0 20px;
   }
   header .container .image {
     height: 360px;
-    /* left: 50px; */
     width: 100%;
+  }
+
+  header .container .image img {
+    left: -2.5rem;
+  }
+  header .container .text .btn {
+    display: block;
+    margin: auto;
+    width: 150px;
   }
   .nav-blogs .container {
     flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
   }
 
-  .nav-blogs .container > * {
-    width: 100%;
-  }
-  .nav-blogs .container nav {
-    width: 100%;
-  }
-  .matches {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media only screen and (min-width: 689px) and (max-width: 992px) {
-  .nav-blogs .container {
-    flex-direction: column;
-    flex-grow: 1;
-    gap: 20px;
+  .match .flag img {
+    width: 20vw;
   }
 
-  .nav-blogs .container .nav,
-  .nav-blogs .container .blogs {
+  .nav-blogs .container > * > * {
+    margin: auto;
+  }
+
+  .nav-blogs .container .nav {
     width: 100%;
   }
 
   .nav-blogs .container .nav nav {
-    display: flex;
+    margin: auto;
+    background-color: white;
+  }
+
+  .nav-blogs .container .blogs {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  footer .links {
+    display: block;
+  }
+
+  .matches {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Mobile Device End  */
+
+/* Tablet Device Start  */
+
+@media only screen and (min-width: 689px) and (max-width: 1080px) {
+  header .container > * {
+    /* border: 1px solid; */
+    width: 50%;
+    padding: 0 30px;
+  }
+  .nav-blogs .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-blogs .container .nav,
+  .nav-blogs .container .blogs,
+  .nav-blogs .container .matches {
+    width: 100%;
+  }
+
+  .nav-blogs .container .nav nav {
+    background-color: white;
     flex-direction: row;
-    align-items: center;
+    width: 100%;
     justify-content: space-between;
-    gap: 15px;
+    gap: 10px;
   }
 
   .nav-blogs .container .nav nav > * {
     flex-grow: 1;
   }
 
-  .header {
-    display: none;
+  .nav-blogs .container .blogs,
+  .nav-blogs .container .matches {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Desktop Device End  */
