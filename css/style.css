@@ -376,7 +376,7 @@ footer i {
   }
 
   footer .links {
-    display: block;
+    flex-direction: column;
   }
 
   .matches {
